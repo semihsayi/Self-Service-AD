@@ -5,12 +5,6 @@ title: 'Self-ServiceAD application document template'
 # Self-Service Active Directory
 ## _The good way account management on Active Directory_
 
-
-## Table of Contents
-
-[TOC]
-
-
 ## Introduce
 
 Self-Service AD (SSAD) is a web-based password management solution. It eliminates the users dependency on administrators to change or reset their passwords. It reduces the workload of the help desk and in turn reduces the cost incurred by the company.
@@ -18,6 +12,7 @@ Self-Service AD (SSAD) is a web-based password management solution. It eliminate
 Every day help desk and IT personnel waste time handling minor problems that regular users can solve by themselves. Every password reset, create user, user info update, enable/disable user in Active Directory involves skilled personnel whereas users can easily perform these tasks for themselves. Providing users with the possibility of Active Directory self-service saves human resources and streamlines updating of the active directory information. This app helps your Core IT Staff focus on the daily challenges to run and improve your Environment.
 
 This application used in 9 different organizations, the password reset workload of IT personnel has decreased by 65% with the self-service password reset feature in the last 3 years.
+
 
 ## How does it work?
 

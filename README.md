@@ -41,9 +41,9 @@ What can users do?
 
 ### Advantages of Self-Service AD application
 
-:heavy_check_mark: Does not require a server installation that is a member of the Active Directory domain.
-:heavy_check_mark: The delegate user does not need to be a member of the Domain Admin group. For delegation, it is sufficient to define a delegation user with limited authority to the OUs and groups that the portal can process.
-:heavy_check_mark: Since it has a distributed architecture, projects can be located on different servers (UI, API, Background services).
+- Does not require a server installation that is a member of the Active Directory domain.
+- The delegate user does not need to be a member of the Domain Admin group. For delegation, it is sufficient to define a delegation user with limited authority to the OUs and groups that the portal can process.
+- Since it has a distributed architecture, projects can be located on different servers (UI, API, Background services).
 
 ### Prerequisites
 

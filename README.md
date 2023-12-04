@@ -1,7 +1,6 @@
-# Self-Service Active Directory
-## _The good way account management on Active Directory_
+# Self-Service Active Directory Application
 
-## Introduce
+## _The good way account management on Active Directory_
 
 Self-Service AD (SSAD) is a web-based password management solution. It eliminates the users dependency on administrators to change or reset their passwords. It reduces the workload of the help desk and in turn reduces the cost incurred by the company.
 

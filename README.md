@@ -1,7 +1,3 @@
----
-title: 'Self-ServiceAD application document template'
----
-
 # Self-Service Active Directory
 ## _The good way account management on Active Directory_
 

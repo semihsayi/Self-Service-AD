@@ -1,6 +1,7 @@
 # Self-Service Active Directory
 ## _The good way account management on Active Directory_
 
+> This application is closed source, the codes of the software have not been shared.
 
 ## Introduce
 

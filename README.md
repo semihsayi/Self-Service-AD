@@ -137,7 +137,7 @@ The WebUI project communicates with the SQL database and the endpoints in the We
 
 API endpoints authenticate with JWT. It is configured for JWT authentication with the `/Extensions/AddIdentityExtension` method. Some endpoints related to background services require authentication with API key. (Example: User export operations, Caching services..) `ApiKey` methods in `/Attributes` directory are ApiKey validation at Controller level. (Example: `CacheController,NotificationsController,UserImportsController` ). API key definitions are stored in the `appSettings.json` file. (Example: NotificationApiKey, UserExportApiKey)
 
-Localization related settings are defined in `/Core/Helpers/JsonStringLocalizer` and `/Core/Helpers/JsonStringLocalizerFactory` classes.
+Localization related settings are defined in `/Core/Helpers/JsonStringLocalizer` and `/Core/Helpers/JsonStringLocalizerFactory` classes. Available languages are English(EN) and Turkish(TR).
 
 The necessary settings for CORS configuration have been added to the `Program.cs` file as middleware with the `/Extensions/AddCorsOptionExtensions` extension method.
 
@@ -173,7 +173,7 @@ In addition, after the language selection made in the WebUI project, the `Accept
 
 ### Notification services
 
-In the NotificationServices project, the services required for sending SMS, Slack and E-mail are written.  [Twilio](https://www.twilio.com/),[Teknomart](http://www.teknomart.com.tr/),[NetGSM](https://www.netgsm.com).Also, Generic SMS service has been written for companies that support HTTP GET method.
+In the NotificationServices project, the services required for sending SMS, Slack and E-mail are developed. [Twilio](https://www.twilio.com/),[Teknomart](http://www.teknomart.com.tr/),[NetGSM](https://www.netgsm.com) also, generic SMS service has been developed for companies that support HTTP GET method.
 
 **RabbitMQ** is preferred as the message broker in the application architecture. Asynchronous endpoints such as sending SMS are made through services that process RabbitMQ message queues. 
 
@@ -311,5 +311,3 @@ docker compose up
 ```
 
 Edit environment options on ${appsettings.EnvironmentName.json}, select environment (Development, Staging or Production) and then execute projects.
-
-

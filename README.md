@@ -1,9 +1,10 @@
 # Self-Service Active Directory
 ## _The good way account management on Active Directory_
 
-> This application is closed source, the codes of the software have not been shared.
 
 ## Introduce
+
+> This application is closed source, the codes of the software have not been shared.
 
 Self-Service AD (SSAD) is a web-based password management solution. It eliminates the users dependency on administrators to change or reset their passwords. It reduces the workload of the help desk and in turn reduces the cost incurred by the company.
 
@@ -49,7 +50,6 @@ What can users do?
 ### Prerequisites
 
 ```sh
-Elastic APM
 Microsoft Active Directory
 MongoDB
 RabbitMQ
@@ -61,19 +61,17 @@ SQL Server
 
 Project  | Technology  | Type | Description
 ------------- | ------------- | ------------- | -------------
-SelfServiceAD.Business  | .NET 7.0  | Class Library | Business layer
-SelfServiceAD.Caching  | .NET 7.0  | Class Library | Caching layer
-SelfServiceAD.Core  | .NET 7.0  | Class Library | Core layer
-SelfServiceAD.Data  | .NET 7.0  | Class Library | Data access layer
-SelfServiceAD.Entities | .NET 7.0 | Class Library | Entities
-SelfServiceAD.DhcpServices | .NET 7.0  | Worker Services | Dhcp server communication layer
-SelfServiceAD.LdapServices | .NET 7.0  | Class Library | LDAP communication layer
-SelfServiceAD.LoggingServices | .NET 7.0  | Class Library | Logging services
-SelfServiceAD.Messaging | .NET 7.0  | Class Library | Message broker services
-SelfServiceAD.NotificationServices  | .NET 7.0 | Worker Services | SMS,Slack,Email,Logging services
-SelfServiceAD.HealthCheck  | .NET 6.0 | Web Application | Healtcheck API
-SelfServiceAD.WebAPI | .NET 7.0 | Web Application | All API endpoints for UI
-SelfServiceAD.WebUI  | .NET 7.0 | Web Application | Razor pages
+SelfServiceAD.Business  | .NET 8.0  | Class Library | Business layer
+SelfServiceAD.Caching  | .NET 8.0  | Class Library | Caching layer
+SelfServiceAD.Core  | .NET 8.0  | Class Library | Core layer
+SelfServiceAD.Data  | .NET 8.0  | Class Library | Data access layer
+SelfServiceAD.Entities | .NET 8.0 | Class Library | Entities
+SelfServiceAD.LdapServices | .NET 8.0  | Class Library | LDAP communication layer
+SelfServiceAD.LoggingServices | .NET 8.0  | Class Library | Logging services
+SelfServiceAD.Messaging | .NET 8.0  | Class Library | Message broker services
+SelfServiceAD.NotificationServices  | .NET 8.0 | Worker Services | SMS,Slack,Email,Logging services
+SelfServiceAD.WebAPI | .NET 8.0 | Web Application | All API endpoints for UI
+SelfServiceAD.WebUI  | .NET 8.0 | Web Application | Razor pages
 
 ## Database structure
 
@@ -137,7 +135,7 @@ The WebUI project communicates with the SQL database and the endpoints in the We
 
 API endpoints authenticate with JWT. It is configured for JWT authentication with the `/Extensions/AddIdentityExtension` method. Some endpoints related to background services require authentication with API key. (Example: User export operations, Caching services..) `ApiKey` methods in `/Attributes` directory are ApiKey validation at Controller level. (Example: `CacheController,NotificationsController,UserImportsController` ). API key definitions are stored in the `appSettings.json` file. (Example: NotificationApiKey, UserExportApiKey)
 
-Localization related settings are defined in `/Core/Helpers/JsonStringLocalizer` and `/Core/Helpers/JsonStringLocalizerFactory` classes. Available languages are English(EN) and Turkish(TR).
+Localization related settings are defined in `/Core/Helpers/JsonStringLocalizer` and `/Core/Helpers/JsonStringLocalizerFactory` classes.
 
 The necessary settings for CORS configuration have been added to the `Program.cs` file as middleware with the `/Extensions/AddCorsOptionExtensions` extension method.
 
@@ -173,7 +171,7 @@ In addition, after the language selection made in the WebUI project, the `Accept
 
 ### Notification services
 
-In the NotificationServices project, the services required for sending SMS, Slack and E-mail are developed. [Twilio](https://www.twilio.com/),[Teknomart](http://www.teknomart.com.tr/),[NetGSM](https://www.netgsm.com) also, generic SMS service has been developed for companies that support HTTP GET method.
+In the NotificationServices project, the services required for sending SMS, Slack and E-mail are written.  [Twilio](https://www.twilio.com/),[Teknomart](http://www.teknomart.com.tr/),[NetGSM](https://www.netgsm.com).Also, Generic SMS service has been written for companies that support HTTP GET method.
 
 **RabbitMQ** is preferred as the message broker in the application architecture. Asynchronous endpoints such as sending SMS are made through services that process RabbitMQ message queues. 
 
@@ -273,17 +271,7 @@ Defined in `SelfServiceAD.Entities/Enums/UserRequestStatusCode`
 
 Self Service Active Directory Application uses a number of projects to work properly:
 
-- [AspNetCore.HealthChecks.MongoDb](https://www.nuget.org/packages/AspNetCore.HealthChecks.MongoDb/)
-- [AspNetCore.HealthChecks.Rabbitmq](https://www.nuget.org/packages/AspNetCore.HealthChecks.Rabbitmq/)
-- [AspNetCore.HealthChecks.Redis](https://www.nuget.org/packages/AspNetCore.HealthChecks.Redis/)
-- [AspNetCore.HealthChecks.SqlServer](https://www.nuget.org/packages/AspNetCore.HealthChecks.SqlServer/)
-- [AspNetCore.HealthChecks.System](https://www.nuget.org/packages/AspNetCore.HealthChecks.System/)
-- [AspNetCore.HealthChecks.UI](https://www.nuget.org/packages/AspNetCore.HealthChecks.UI/)
-- [AspNetCore.HealthChecks.UI.Client](https://www.nuget.org/packages/AspNetCore.HealthChecks.UI.Client/)
-- [AspNetCore.HealthChecks.UI.InMemory.Storage](https://www.nuget.org/packages/AspNetCore.HealthChecks.UI.InMemory.Storage/)
-- [AspNetCoreRateLimit](https://www.nuget.org/packages/AspNetCoreRateLimit/)
 - [AutoMapper.Extensions.Microsoft.DependencyInjection](https://www.nuget.org/packages/AutoMapper.Extensions.Microsoft.DependencyInjection/)
-- [Elastic.Apm.NetCoreAll](https://www.nuget.org/packages/Elastic.Apm.NetCoreAll/)
 - [FluentValidation](https://www.nuget.org/packages/FluentValidation/)
 - [Hangfire.Core](https://www.nuget.org/packages/Hangfire.Core/1.7.28)
 - [jQuery](https://www.nuget.org/packages/jQuery/)
@@ -311,3 +299,5 @@ docker compose up
 ```
 
 Edit environment options on ${appsettings.EnvironmentName.json}, select environment (Development, Staging or Production) and then execute projects.
+
+

@@ -67,9 +67,7 @@ SelfServiceAD.Core  | .NET 8.0  | Class Library | Core layer
 SelfServiceAD.Data  | .NET 8.0  | Class Library | Data access layer
 SelfServiceAD.Entities | .NET 8.0 | Class Library | Entities
 SelfServiceAD.LdapServices | .NET 8.0  | Class Library | LDAP communication layer
-SelfServiceAD.LoggingServices | .NET 8.0  | Class Library | Logging services
 SelfServiceAD.Messaging | .NET 8.0  | Class Library | Message broker services
-SelfServiceAD.NotificationServices  | .NET 8.0 | Worker Services | SMS,Slack,Email,Logging services
 SelfServiceAD.WebAPI | .NET 8.0 | Web Application | All API endpoints for UI
 SelfServiceAD.WebUI  | .NET 8.0 | Web Application | Razor pages
 

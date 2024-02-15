@@ -12,7 +12,6 @@ Every day help desk and IT personnel waste time handling minor problems that reg
 
 This application used in 9 different organizations, the password reset workload of IT personnel has decreased by 65% with the self-service password reset feature in the last 3 years.
 
-
 In cases where the user does not have an active directory account, the phone number is not registered or is not up to date, or the account is inactive, it automatically creates a ticket to the IT department and if the IT department approves the ticket, it automatically performs all the necessary active directory user transactions and sends the information to the user's phone via SMS. 
 
 With automatically created tickets, IT employees can perform transactions with the tickets in the portal without having to perform manual transactions with the active Directory console or 3rd party Active Directory applications.
